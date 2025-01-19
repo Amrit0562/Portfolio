@@ -1,0 +1,32 @@
+/* Medium screens */
+@media (max-width: 768px) {
+    .socialicon-container i {
+        font-size: 80px;
+    }
+
+    img {
+        width: 80px;
+        height: 80px;
+    }
+
+    p {
+        font-size: 1.2rem;
+    }
+}
+
+/* Small screens */
+@media (max-width: 480px) {
+    .socialicon-container i {
+        font-size: 60px;
+    }
+
+    img {
+        width: 60px;
+        height: 60px;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+}
+/*css for the icons to remain responsive end*/
