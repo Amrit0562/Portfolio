@@ -7,6 +7,10 @@
             <button type="button" data-fc-dismiss><i class="ri-close-line text-xl"></i></button>
         </div>
 
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.css" />
+        <script src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js"></script>
+
+
         <div class="h-[calc(100vh-128px)]" data-simplebar>
             <div class="p-6">
                 <div class="mb-6">
