@@ -7,6 +7,7 @@
     <meta name="author" content="Amrit Bhandari">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+    <link rel="icon" type="image/x-icon" href="{{ '/assets/images/favicon/fav.png' }}">
     <title>portfolio @yield('title')</title>
 
     <!-- Styles -->

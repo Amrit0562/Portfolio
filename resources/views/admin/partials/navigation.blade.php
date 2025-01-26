@@ -2,17 +2,17 @@
 <header class="app-header flex items-center px-4 gap-3.5">
 
     <!-- App Logo -->
-    <a href="index.html" class="logo-box">
+    <a href="{{ route('dashboard') }}" class="logo-box">
         <!-- Light Logo -->
         <div class="logo-light">
-            <img src="assets/images/logo.png" class="logo-lg h-[22px]" alt="Light logo">
-            <img src="assets/images/logo-sm.png" class="logo-sm h-[22px]" alt="Small logo">
+            <img src="{{ asset('assets/images/admin/Alogosm.png') }}" class="logo-lg h-16" alt="Light logo">
+            <img src="{{ asset('assets/images/admin/Alogosm.png') }}" class="logo-sm h-16" alt="Small logo">
         </div>
 
         <!-- Dark Logo -->
         <div class="logo-dark">
-            <img src="assets/images/logo-dark.png" class="logo-lg h-[22px]" alt="Dark logo">
-            <img src="assets/images/logo-sm.png" class="logo-sm h-[22px]" alt="Small logo">
+            <img src="{{ asset('assets/images/admin/Alogosm.png') }}" class="logo-lg h-16" alt="Dark logo">
+            <img src="{{ asset('assets/images/admin/Alogosm.png') }}" class="logo-sm h-16" alt="Small logo">
         </div>
     </a>
 
@@ -95,7 +95,7 @@
             </a>
 
             <!-- item-->
-            <a href="pages-profile.html"
+            <a href=""
                 class="flex items-center gap-2 py-1.5 px-4 text-sm text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300">
                 <i class="ri-settings-4-line text-lg align-middle"></i>
                 <span>Settings</span>

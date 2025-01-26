@@ -4,7 +4,7 @@
         <div>
             <script>
                 document.write(new Date().getFullYear())
-            </script> © Blog - <a href="https://baakhapaa.com/" target="_blank">Baakhapaa</a>
+            </script> © Portfolio - <a href="https://baakhapaa.com/" target="_blank">Amrit</a>
         </div>
         <div class="md:flex hidden gap-4 item-center md:justify-end">
             <a href="javascript: void(0);"
@@ -12,8 +12,7 @@
             <a href="javascript: void(0);"
                 class="text-sm leading-5 text-zinc-600 transition hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white">Support</a>
             <a href="javascript: void(0);"
-                class="text-sm leading-5 text-zinc-600 transition hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white">Contact
-                Us</a>
+                class="text-sm leading-5 text-zinc-600 transition hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white">Contact</a>
         </div>
     </div>
 </footer>

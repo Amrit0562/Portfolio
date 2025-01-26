@@ -31,7 +31,6 @@ class StoreTechnologyRequest extends FormRequest
         $data =  [
             'title' => $this->input('title'),
         ];
-        // dd($data);
 
         return $data;
     }

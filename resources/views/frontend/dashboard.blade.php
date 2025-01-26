@@ -45,17 +45,17 @@
     </div>
 
     <!-- Projects Block -->
-    @foreach ($technologies as $technology)
-        <div class="col-md-6 d-flex flex-column gap-4" id="work">
-            <div class="p-4"
-                style="box-shadow:0 4px 6px rgba(0, 0, 0, 0.2); border: 2px solid #ccc;  border-radius: 25px; height: 500px; margin: 0; padding: 0;">
-                Project1
-            </div>
+    {{-- @foreach ($technologies as $technology) --}}
+    <div class="col-md-6 d-flex flex-column gap-4" id="work">
+        <div class="p-4"
+            style="box-shadow:0 4px 6px rgba(0, 0, 0, 0.2); border: 2px solid #ccc;  border-radius: 25px; height: 500px; margin: 0; padding: 0;">
+            Project1
         </div>
-    @endforeach
+    </div>
+    {{-- @endforeach --}}
 
 
-    <div class="col-md-6 d-flex flex-column mt-0" id="work">
+    <div class="col-md-6 d-flex flex-column" id="work">
         <div class="p-4"
             style="box-shadow:0 4px 6px rgba(0, 0, 0, 0.2); border: 2px solid #ccc;  border-radius: 25px; height: 400px; margin: 0; padding: 0;">
             Project2
