@@ -193,6 +193,87 @@
             </div>
         </div>
 
+        <div class="card mb-6">
+            <div class="flex card-header justify-between items-center">
+                <h4 class="card-title">My Projects Details...</h4>
+                <a role="button" href="{{ route('project.create') }}"
+                    class="btn rounded-full bg-info/25 text-info hover:bg-info hover:text-white mb-4 gap-1">
+                    <i class="ri-add-fill"></i> Create
+                </a>
+            </div>
+            <div class="p-4">
+                <h1 class="mb-2"> Details:</h1>
+                <div class="grid grid-cols-3 gap-2">
+                    <div class="col-span-2">
+                        {{-- <div class="card"> --}}
+                        <div class="py-2 px-1">
+                            <div class="custom-scroll overflow-auto h-50">
+                                <div class="custom-scroll overflow-auto h-80">
+                                    <div class="grid grid-cols-2 gap-2">
+                                        @foreach ($projects as $project)
+                                            <div class="border rounded-lg">
+                                                <div class="max-w-sm rounded overflow-hidden shadow-lg">
+                                                    @if ($project->hasMedia('images'))
+                                                        <img src="{{ asset($project->getFirstMediaUrl('images')) }}"
+                                                            alt="Project Image">
+                                                    @else
+                                                        <img src="{{ asset('assets/images/admin/Alogosm.png') }}"
+                                                            alt="Default Image">
+                                                    @endif
+                                                    <div class="px-2">
+                                                        <div class="font-bold text-xl">{{ $project->title }}</div>
+                                                    </div>
+                                                    <div class="px-2">
+                                                        <div class="text-black text-md">{{ $project->company_name }}
+                                                        </div>
+                                                    </div>
+                                                    <div class="px-2 pt-4 pb-2">
+                                                        <span
+                                                            class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#photography
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        @endforeach
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {{-- </div> --}}
+                    </div>
+                    <div class="card">
+                        <div class="custom-scroll overflow-auto h-40 py-5 px-4">
+                            <div class="font-bold text-center mb-3">Tools Used In Project</div>
+                            @foreach ($projectTools as $projectTool)
+                                <div class="flex"><i class="ri-arrow-right-fill"></i>
+                                    {{ $projectTool->name }}
+                                    <div class="flex items-center justify-center gap-3 px-4">
+                                        <a href="">
+                                            <i class="ri-edit-2-line text-lg text-primary"></i>
+                                        </a>
+
+                                        <form action="" method="POST" class="d-inline">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button>
+                                                <i class="ri-delete-bin-2-line text-lg text-danger"></i>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            @endforeach
+                            <div class="custom-scroll overflow-auto h-40 text-center">
+                                <a role="button" href="{{ route('projectTool.create') }}"
+                                    class="btn rounded-full bg-info/25 text-info hover:bg-info hover:text-white mb-4 mt-4 gap-1">
+                                    <i class="ri-add-fill"></i> Add
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </main>
     @include('admin.partials.footer')
 @endsection

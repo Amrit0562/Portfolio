@@ -106,7 +106,29 @@
                     </li>
                 </ul>
             </li>
-        </ul>
 
+            <li class="menu-item">
+                <a href="javascript:void(0)" data-fc-type="collapse" class="menu-link">
+                    <span class="menu-icon">
+                        <i class="ri-folder-line"></i>
+                    </span>
+                    <span class="menu-text"> Project </span>
+                    <span class="menu-arrow"></span>
+                </a>
+                <ul class="sub-menu hidden">
+                    <li class="menu-item">
+                        <a href="{{ route('dashboard') }}" class="menu-link">
+                            <span class="menu-text">
+                                <i class="ri-eye-line"></i> View</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="{{ route('project.create') }}" class="menu-link">
+                            <span class="menu-text"><i class="ri-add-line"></i> Create</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
     </div>
 </div>

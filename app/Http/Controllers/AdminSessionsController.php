@@ -16,13 +16,13 @@ class AdminSessionsController extends Controller
         return view('admin.auth.login');
     }
 
-    public function store(AdminLoginRequest $request) // Use the custom form request here
+    public function store(AdminLoginRequest $request)
     {
         if (Auth::guard('admin')->attempt([
             'email' => $request->email,
             'password' => $request->password,
         ], $request->get('remember'))) {
-            return redirect()->route('dashboard')->with('success', 'Welcome Admin!!');
+            return redirect()->route('dashboard')->with('success', 'Welcome Back Admin!!');
         }
 
         return back()->withErrors(['email' => 'Invalid admin credentials.']);
@@ -32,6 +32,6 @@ class AdminSessionsController extends Controller
     {
         Auth::guard('admin')->logout();
         $request->session()->invalidate();
-        return redirect()->route('home')->with('success', 'Goodbye Admin!!');
+        return redirect()->route('home')->with('success', 'Goodbye Admin. See You Soon!!');
     }
 }

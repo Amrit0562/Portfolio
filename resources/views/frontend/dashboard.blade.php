@@ -55,7 +55,7 @@
     {{-- @endforeach --}}
 
 
-    <div class="col-md-6 d-flex flex-column" id="work">
+    {{-- <div class="col-md-6 d-flex flex-column" id="work">
         <div class="p-4"
             style="box-shadow:0 4px 6px rgba(0, 0, 0, 0.2); border: 2px solid #ccc;  border-radius: 25px; height: 400px; margin: 0; padding: 0;">
             Project2
@@ -67,5 +67,5 @@
             style="box-shadow:0 4px 6px rgba(0, 0, 0, 0.2); border: 2px solid #ccc;  border-radius: 25px; height: 400px; margin: 0; padding: 0;">
             Project3
         </div>
-    </div>
+    </div> --}}
 @endsection

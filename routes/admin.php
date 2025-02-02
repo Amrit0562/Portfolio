@@ -2,9 +2,13 @@
 
 use App\Http\Controllers\AdminSessionsController;
 use App\Http\Controllers\ExperienceController;
+use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\ProjectToolController;
 use App\Http\Controllers\TechnologyController;
 use App\Http\Controllers\UserInformationController;
 use App\Models\Experience;
+use App\Models\Project;
+use App\Models\ProjectTool;
 use App\Models\Technology;
 use App\Models\UserInformation;
 use Illuminate\Support\Facades\Route;
@@ -25,7 +29,9 @@ Route::prefix('admin')->group(function () {
             $experiences = Experience::all();
             $userInformations = UserInformation::all();
             $technologies = Technology::all();
-            return view('admin.dashboard.index', compact('userInformations', 'technologies', 'experiences'));
+            $projectTools = ProjectTool::all();
+            $projects = Project::all();
+            return view('admin.dashboard.index', compact('userInformations', 'technologies', 'experiences', 'projectTools', 'projects'));
         })->name('dashboard');
         // Route::get('/profile', [AdminProfileController::class, 'index'])->name('profile.index');
 
@@ -42,7 +48,6 @@ Route::prefix('admin')->group(function () {
         Route::put('admin/userInfo/edit/{id}', [UserInformationController::class, 'update'])->name('userInfo.update');
 
         Route::delete('userInfo/{userInformation}', [UserInformationController::class, 'destroy'])->name('userInfo.delete');
-        // Route::delete('blog/{blog}', [UserInformationController::class, 'destroy'])->name('blog.delete');
 
 
         /*
@@ -54,20 +59,6 @@ Route::prefix('admin')->group(function () {
         Route::post('technology/store', [TechnologyController::class, 'store'])->name('technology.store');
         // Route::get('technology/index', [TechnologyController::class, 'index'])->name('technology.index');
         Route::delete('technology/{technology}', [TechnologyController::class, 'destroy'])->name('technology.delete');
-
-        /*
-        |--------------------------------------------------------------------------
-        | ExperienceTopic CRUD Routes
-        |--------------------------------------------------------------------------
-        */
-
-        // Route::get('experienceTopic/create', [ExperienceTopicController::class, 'create'])->name('experienceTopic.create');
-        // Route::post('experienceTopic/store', [ExperienceTopicController::class, 'store'])->name('experienceTopic.store');
-        // Route::get('experienceTopic/edit/{id}', [ExperienceTopicController::class, 'edit'])->name('experienceTopic.edit');
-
-        // Route::put('experienceTopic/edit/{id}', [ExperienceTopicController::class, 'update'])->name('experienceTopic.update');
-        // // Route::get('experienceTopic/index', [ExperienceTopicController::class, 'index'])->name('ExperienceTopic.index');
-        // Route::delete('experienceTopic/{experienceTopic}', [ExperienceTopicController::class, 'destroy'])->name('experienceTopic.delete');
 
         /*
         |--------------------------------------------------------------------------
@@ -83,5 +74,28 @@ Route::prefix('admin')->group(function () {
         Route::put('experience/edit/{id}', [ExperienceController::class, 'update'])->name('experience.update');
         // Route::get('experience/index', [ExperienceController::class, 'index'])->name('experience.index');
         Route::delete('experience/{experience}', [ExperienceController::class, 'destroy'])->name('experience.delete');
+
+        /*
+        |--------------------------------------------------------------------------
+        | ProjectTools CRUD Routes
+        |--------------------------------------------------------------------------
+        */
+
+        Route::get('projectTool/create', [ProjectToolController::class, 'create'])->name('projectTool.create');
+        Route::post('projectTool/store', [ProjectToolController::class, 'store'])->name('projectTool.store');
+
+
+        /*
+        |--------------------------------------------------------------------------
+        | Project CRUD Routes
+        |--------------------------------------------------------------------------
+        */
+
+        Route::get('project/create', [ProjectController::class, 'create'])->name('project.create');
+        Route::post('project/store', [ProjectController::class, 'store'])->name('project.store');
+        // Route::get('project/edit/{id}', [ProjectController::class, 'edit'])->name('project.edit');
+
+        // Route::put('project/edit/{id}', [ProjectController::class, 'update'])->name('project.update');
+        // Route::delete('project/{project}', [ProjectController::class, 'destroy'])->name('project.delete');
     });
 });
