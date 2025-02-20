@@ -16,13 +16,6 @@ class UserInformationController extends Controller
     {
         return view('admin.userInformation.create');
     }
-
-    // public function index()
-    // {
-    //     $userInformation = UserInformation::all();
-    //     return view('userInfo.index', compact('userInformation'));
-    // }
-
     public function store(StoreUserInformationRequest $request)
     {
         $data = $request->validatedData();

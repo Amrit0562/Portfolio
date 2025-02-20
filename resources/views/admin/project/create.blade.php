@@ -3,7 +3,7 @@
     <main class="p-6">
         <!-- Page Title Start -->
         <div class="flex justify-between items-center mb-6">
-            <h4 class="text-slate-900 dark:text-slate-200 text-lg font-medium">Experience</h4>
+            <h4 class="text-slate-900 dark:text-slate-200 text-lg font-medium">Project</h4>
 
             <div class="md:flex hidden items-center gap-2.5 font-semibold">
                 <div class="flex items-center gap-2">

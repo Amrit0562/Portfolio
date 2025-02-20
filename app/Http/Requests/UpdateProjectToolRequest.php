@@ -11,7 +11,7 @@ class UpdateProjectToolRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,15 @@ class UpdateProjectToolRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name' => 'required|string|max:255',
         ];
+    }
+    public function validatedData()
+    {
+        $data =  [
+            'name' => $this->input('name'),
+        ];
+
+        return $data;
     }
 }

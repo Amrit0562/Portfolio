@@ -4,7 +4,7 @@
         <div>
             <script>
                 document.write(new Date().getFullYear())
-            </script> © Portfolio - <a href="https://baakhapaa.com/" target="_blank">Amrit</a>
+            </script> © Portfolio - <a href="" target="_blank">Amrit</a>
         </div>
         <div class="md:flex hidden gap-4 item-center md:justify-end">
             <a href="javascript: void(0);"

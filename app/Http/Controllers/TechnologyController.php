@@ -29,10 +29,5 @@ class TechnologyController extends Controller
         return redirect()->route('dashboard')->with('success', 'Your Technology Image Stored Successfully.');
     }
 
-    // public function index()
-    // {
-    //     return view('')
-    // }
-
     public function delete() {}
 }

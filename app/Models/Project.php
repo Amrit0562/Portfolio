@@ -19,7 +19,8 @@ class Project extends Model implements HasMedia
 
     public function registerMediaCollections(): void
     {
-        $this->addMediaCollection('images')->singleFile();
+        $this->addMediaCollection('project_images')->singleFile();
+        $this->addMediaCollection('company_logos')->singleFile();
     }
 
     public function projectTools()

@@ -3,15 +3,15 @@
     <main class="p-6">
         <!-- Page Title Start -->
         <div class="flex justify-between items-center mb-6">
-            <h4 class="text-slate-900 dark:text-slate-200 text-lg font-medium">Project Tools</h4>
+            <h4 class="text-slate-900 dark:text-slate-200 text-lg font-medium">Experience</h4>
 
             <div class="md:flex hidden items-center gap-2.5 font-semibold">
                 <div class="flex items-center gap-2">
                     <a href="{{ route('dashboard') }}" class="text-sm font-medium text-slate-700 dark:text-slate-400"
                         aria-current="page">Dashboard</a>
                     <i class="ri-arrow-right-s-line text-base text-slate-400 rtl:rotate-180"></i>
-                    <a href="" class="text-sm font-medium text-slate-700 dark:text-slate-400"
-                        aria-current="page">Create Your Project Tools
+                    <a href="" class="text-sm font-medium text-slate-700 dark:text-slate-400" aria-current="page">Edit
+                        Project Tools
                     </a>
                 </div>
             </div>
@@ -32,16 +32,17 @@
                                     </h5>
                                 </div>
 
-                                <form class="px-5" action="{{ route('projectTool.store') }}" method="POST"
-                                    enctype="multipart/form-data">
+                                <form class="px-5" action="{{ route('projectTool.update', ['id' => $projectTool->id]) }}"
+                                    method="POST" enctype="multipart/form-data">
                                     @csrf
+                                    @method('PUT')
                                     @include('admin.project.tool.partials.form')
 
                                     <div class="text-center mt-4 multisteps-form__content">
                                         <button type="submit"
                                             class="btn bg-violet-500 border-violet-500 text-white mb-4 gap-2">
                                             <i class="ri-upload-cloud-line text-xl text-gray-300 dark:text-gray-200"></i>
-                                            Create
+                                            Update
                                         </button>
                                     </div>
 

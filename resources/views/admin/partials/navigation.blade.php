@@ -69,51 +69,33 @@
     <div class="relative">
         <button data-fc-type="dropdown" data-fc-placement="bottom-end" type="button"
             class="nav-link flex items-center gap-2.5 px-3 bg-black/5 border-x border-black/10">
-            {{-- @if (auth()->user()->getFirstMedia('images'))
-                <img src="{{ auth()->user()->getFirstMedia('images')->getUrl() }}" class="rounded-full h-8"
-                    alt="user-image">
-            @else --}}
-            <img src="{{ asset('assets/images/user.png') }}" class="rounded-full h-14" alt="user-image">
-            {{-- @endif --}}
+            @php
+                $userInfo = App\Models\UserInformation::find(1);
+            @endphp
+            @php
+                $userInfo = App\Models\UserInformation::find(1);
+            @endphp
+
+            @if ($userInfo && $userInfo->hasMedia('images'))
+                <img src="{{ $userInfo->getFirstMediaUrl('images') }}" class="rounded-full w-8 h-8" alt="user-image">
+            @else
+                <img src="{{ asset('assets/images/user.png') }}" class="rounded-full w-8 h-8" alt="user-image">
+            @endif
+
             <span class="md:flex flex-col gap-0.5 text-start hidden">
                 <h5 class="text-sm">{{ auth()->user()->name }}</h5>
-                <span class="text-xs">Reader</span>
+                {{-- <span class="text-xs">Admin</span> --}}
             </span>
         </button>
 
         <div
             class="fc-dropdown fc-dropdown-open:opacity-100 hidden opacity-0 w-44 z-50 transition-all duration-300 bg-white shadow-lg border rounded-lg py-2 border-gray-200 dark:border-gray-700 dark:bg-gray-800">
             <!-- item-->
-            <h6 class="flex items-center py-2 px-3 text-xs text-gray-800 dark:text-gray-400">Welcome !
+            <h6 class="flex items-center py-2 px-3 text-xs text-gray-800 dark:text-gray-400">
+                Welcome!
+                <h6 class="px-3 text-lg text-gray-800">{{ $userInfo->name }}
+                </h6>
             </h6>
-
-            <!-- item-->
-            <a href=""
-                class="flex items-center gap-2 py-1.5 px-4 text-sm text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300">
-                <i class="ri-account-circle-line text-lg align-middle"></i>
-                <span>My Account</span>
-            </a>
-
-            <!-- item-->
-            <a href=""
-                class="flex items-center gap-2 py-1.5 px-4 text-sm text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300">
-                <i class="ri-settings-4-line text-lg align-middle"></i>
-                <span>Settings</span>
-            </a>
-
-            <!-- item-->
-            <a href="pages-faqs.html"
-                class="flex items-center gap-2 py-1.5 px-4 text-sm text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300">
-                <i class="ri-customer-service-2-line text-lg align-middle"></i>
-                <span>Support</span>
-            </a>
-
-            <!-- item-->
-            <a href="auth-lock-screen.html"
-                class="flex items-center gap-2 py-1.5 px-4 text-sm text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300">
-                <i class="ri-lock-password-line text-lg align-middle"></i>
-                <span>Lock Screen</span>
-            </a>
 
             <!-- item-->
             <form id="logout-form" action="{{ route('admin.logout') }}"method="POST">

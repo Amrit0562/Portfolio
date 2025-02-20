@@ -33,7 +33,6 @@ Route::prefix('admin')->group(function () {
             $projects = Project::all();
             return view('admin.dashboard.index', compact('userInformations', 'technologies', 'experiences', 'projectTools', 'projects'));
         })->name('dashboard');
-        // Route::get('/profile', [AdminProfileController::class, 'index'])->name('profile.index');
 
         /*
         |--------------------------------------------------------------------------
@@ -57,7 +56,6 @@ Route::prefix('admin')->group(function () {
         */
         Route::get('technology/create', [TechnologyController::class, 'create'])->name('technology.create');
         Route::post('technology/store', [TechnologyController::class, 'store'])->name('technology.store');
-        // Route::get('technology/index', [TechnologyController::class, 'index'])->name('technology.index');
         Route::delete('technology/{technology}', [TechnologyController::class, 'destroy'])->name('technology.delete');
 
         /*
@@ -72,7 +70,6 @@ Route::prefix('admin')->group(function () {
         Route::get('experience/edit/{id}', [ExperienceController::class, 'edit'])->name('experience.edit');
 
         Route::put('experience/edit/{id}', [ExperienceController::class, 'update'])->name('experience.update');
-        // Route::get('experience/index', [ExperienceController::class, 'index'])->name('experience.index');
         Route::delete('experience/{experience}', [ExperienceController::class, 'destroy'])->name('experience.delete');
 
         /*
@@ -83,6 +80,10 @@ Route::prefix('admin')->group(function () {
 
         Route::get('projectTool/create', [ProjectToolController::class, 'create'])->name('projectTool.create');
         Route::post('projectTool/store', [ProjectToolController::class, 'store'])->name('projectTool.store');
+        Route::get('projectTool/edit/{id}', [projectToolController::class, 'edit'])->name('projectTool.edit');
+
+        Route::put('projectTool/edit/{id}', [projectToolController::class, 'update'])->name('projectTool.update');
+        Route::delete('projectTool/{projectTool}', [projectToolController::class, 'destroy'])->name('projectTool.delete');
 
 
         /*
@@ -93,9 +94,9 @@ Route::prefix('admin')->group(function () {
 
         Route::get('project/create', [ProjectController::class, 'create'])->name('project.create');
         Route::post('project/store', [ProjectController::class, 'store'])->name('project.store');
-        // Route::get('project/edit/{id}', [ProjectController::class, 'edit'])->name('project.edit');
+        Route::get('project/edit/{id}', [ProjectController::class, 'edit'])->name('project.edit');
 
-        // Route::put('project/edit/{id}', [ProjectController::class, 'update'])->name('project.update');
-        // Route::delete('project/{project}', [ProjectController::class, 'destroy'])->name('project.delete');
+        Route::put('project/edit/{id}', [ProjectController::class, 'update'])->name('project.update');
+        Route::delete('project/{project}', [ProjectController::class, 'destroy'])->name('project.delete');
     });
 });

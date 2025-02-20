@@ -1,6 +1,6 @@
 <div class="mb-3">
     <label class="mb-2" for="title">Project title<span class="text-danger">*</span></label>
-    <input type="text" name="title" id="title" class="form-input" value="{{ old('title', $userInfo->title ?? '') }}"
+    <input type="text" name="title" id="title" class="form-input" value="{{ old('title', $project->title ?? '') }}"
         placeholder="Your project title.." required autocomplete="title">
 </div>
 @error('title')
@@ -23,7 +23,7 @@
 <div class="mb-3">
     <label class="mb-2" for="company_name">Company Name<span class="text-danger">*</span></label>
     <input type="text" name="company_name" id="company_name" class="form-input"
-        value="{{ old('company_name', $userInfo->company_name ?? '') }}" placeholder="Your company name.." required
+        value="{{ old('company_name', $project->company_name ?? '') }}" placeholder="Your company name.." required
         autocomplete="company_name">
 </div>
 @error('company_name')
@@ -49,7 +49,11 @@
             title="Not Chosen" multiple required>
             @foreach ($projectTools as $projectTool)
                 @php
-                    $isSelected = isset($project) && $project->projectTools->contains('id', $projectTool->id);
+                    $oldTools = old(
+                        'tools_used',
+                        isset($project) ? $project->projectTools->pluck('id')->toArray() : [],
+                    );
+                    $isSelected = in_array($projectTool->id, $oldTools);
                 @endphp
                 <option value="{{ $projectTool->id }}" {{ $isSelected ? 'selected' : '' }}>
                     {{ $projectTool->name }}
@@ -59,11 +63,10 @@
     </div>
 </div>
 
-
-
 @error('project_tools')
     <small class="text-danger">{{ $message }}</small>
 @enderror
+
 
 
 @push('scripts')
