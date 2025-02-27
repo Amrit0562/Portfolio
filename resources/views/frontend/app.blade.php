@@ -15,15 +15,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
     @stack('styles')
 </head>
 
 <body class="p-4" style="font-family: Arial, sans-serif;">
     @include('frontend.layouts.navbar')
     <div class="row g-4 align-items-start">
-
         @yield('content')
-
     </div>
     <!--scripts-->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -31,6 +30,8 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js" defer></script>
+    <script src="{{ asset('assets/libs/@frostui/tailwindcss/frostui.js') }}"></script>
+
     <script src="{{ asset('assets/frontend.js') }}" defer></script>
 
     @stack('scripts')

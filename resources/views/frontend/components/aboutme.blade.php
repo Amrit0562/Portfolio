@@ -9,7 +9,7 @@
             {{ $userInfo->name }}
         </p>
     </div>
-    <p class="mt-3" style="overflow: hidden;text-overflow: ellipsis;">{{ $userInfo->description }}
+    <p class="mt-3 text-center" style="overflow: hidden;text-overflow: ellipsis;">{{ $userInfo->description }}
     </p>
 </div>
 

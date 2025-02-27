@@ -55,11 +55,6 @@ class ExperienceController extends Controller
 
     public function destroy(Experience $experience)
     {
-        // $userCount = Experience::count();
-        // if ($userCount == 1) {
-        //     return redirect()->route('dashboard')->with('error', "You can't delete me, Admin!");
-        // }
-
         $experience->delete();
         return redirect()->route('dashboard')->with('success', 'Experience on' . $experience->position . 'deleted Successfully!!');
     }

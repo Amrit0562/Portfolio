@@ -30,7 +30,7 @@
                                                 <div class="font-bold py-1 text-xl">{{ $project->title }}</div>
                                             </div>
                                             <div class="px-2 py-1">
-                                                <div class="align-items-center flex gap-1.5 text-black text-md">
+                                                <div class="align-items-center flex gap-1.5 text-md">
                                                     @if ($project->hasMedia('company_logos'))
                                                         <img src="{{ $project->getFirstMediaUrl('company_logos') }}"
                                                             alt="Company Logo"
@@ -40,15 +40,13 @@
                                                             alt="Default Image"
                                                             class="border-2 border-info/40 h-10 rounded-full w-10">
                                                     @endif
-                                                    <span class="flex items-center text-center w-full">
+                                                    <div class="flex items-center text-center w-full">
                                                         {{ $project->company_name }}
-                                                    </span>
-
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="pb-1 pt-4 px-2 py-1">
                                                 @foreach ($project->projectTools as $tool)
-                                                    {{-- {{ dd($tool) }} --}}
                                                     <span
                                                         class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
                                                         {{ $tool->name }}

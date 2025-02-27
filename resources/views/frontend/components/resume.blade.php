@@ -13,11 +13,12 @@
         </div>
         <div style="display: flex; gap: 30px; align-items: center;">
 
-            <a href="{{ asset('amrit-Resume.pdf') }}" class="icon-container m-0" style="color: inherit;">
+            <a href="{{ asset('assets/Resume/amrit.pdf') }}" download="/Resume/amrit.pdf" class="icon-container m-0"
+                style="color: inherit;">
                 <i class='fas fa-lg fa-download'></i>
             </a>
 
-            <a href="{{ asset('amrit-Resume.pdf') }}" class="icon-container m-0"
+            <a href="{{ asset('assets/Resume/amrit.pdf') }}" download="/Resume/amrit.pdf" class="icon-container m-0"
                 style="color: inherit; text-decoration:none;">
                 <i class='fas fa-2x fa-eye'></i>
             </a>

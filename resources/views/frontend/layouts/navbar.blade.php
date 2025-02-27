@@ -4,13 +4,13 @@
             <div id="button-container"
                 style="border: solid; border-color: #cac7c7; height: 50px; display: flex; border-radius: 50px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); text-align: center; justify-content: space-evenly;">
                 <div class="test"
-                    style="width: 100px; display: inline-block; border: 2px solid transparent; border-radius: 50px; padding: 5px 20px; margin: 5px; font-size: 1rem; cursor: pointer; transition: border-color 0.3s;"
+                    style="display: inline-block; border: 2px solid transparent; border-radius: 50px; padding: 5px 20px; margin: 5px; font-size: 1rem; cursor: pointer; transition: border-color 0.3s;"
                     onclick="navigateToSection('all', this)">All</div>
                 <div class="test"
-                    style="width: 100px; display: inline-block; border: 2px solid transparent; border-radius: 50px; padding: 5px 20px; margin: 5px; font-size: 1rem; cursor: pointer; transition: border-color 0.3s;"
+                    style="display: inline-block; border: 2px solid transparent; border-radius: 50px; padding: 5px 20px; margin: 5px; font-size: 1rem; cursor: pointer; transition: border-color 0.3s;"
                     onclick="navigateToSection('about', this)">About</div>
                 <div class="test"
-                    style="width: 100px; display: inline-block; border: 2px solid transparent; border-radius: 50px; padding: 5px 20px; margin: 5px; font-size: 1rem; cursor: pointer; transition: border-color 0.3s;"
+                    style="display: inline-block; border: 2px solid transparent; border-radius: 50px; padding: 5px 20px; margin: 5px; font-size: 1rem; cursor: pointer; transition: border-color 0.3s;"
                     onclick="navigateToSection('work', this)">Work</div>
             </div>
         </div>
